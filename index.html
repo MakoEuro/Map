@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="author" content="Mako Starykovs'ky">
+        <meta name="description" content="Map for fake company">
+        <meta name="keywords" content="HTML, CSS, SE0, web, web development">
+        <link rel="shortcut icon" href="assets/img/favicon.png?v=2" type="image/x-icon">
+        <link rel="stylesheet" href="assets/index.css" media="screen">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@600&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <script src="assets/script/index.js" defer></script>
+        
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet'/>
+        <title>Kartta</title>
+        
+    </head>
+    <body>
+        <main>
+            <header class="flexbox">
+                <p class="title">Kartta</p>
+                <nav class="sidebar">
+                    <ul>                 
+                        <li><a id="underline-target" href="#">Home</a></li>
+                        <li><a id="underline-target" href="#">Maps</a></li>
+                        <li><a id="underline-target" href="#">Contact Us</a></li>
+                    </ul>
+                    <i class="fa-solid fa-bars"></i>
+                </nav>
+            </header>
+            <div id="map">
+                <!-- Map goes here -->
+            </div>
+        </main>
+    </body>
+</html>

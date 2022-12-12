@@ -1,0 +1,160 @@
+@import "./reset.css";
+
+:root {
+    --app-dark-bg: #201c22;
+    --app-font-color: #f2f4f6;
+
+    /* COLORS */
+
+    --app-blue: #09f;
+    --app-green: #9f0;
+    --app-orange: #f90;
+    --app-pink: #ff2caa;
+    --app-purple: #90f;
+}
+
+html {
+    scroll-behavior: smooth;   
+}
+    
+body {
+    background-color: var(--app-dark-bg);
+    overflow: hidden;
+}
+    
+.container {
+    width: min(100% - 30px, 1280px);
+    margin-inline: auto;
+}
+
+/* - - - - - - - - - - - - - - - - - -
+                HEADER
+- - - - - - - - - - - - - - - - - - - */ 
+
+.title {
+    user-select: none;
+}
+
+.title, a {
+    font-size: 24px;
+    height: 40px;
+    font-weight: 600;
+    color: #000000;
+    font-family: inherit;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+header a {
+    font-size: 24px;
+    font-weight: 300;
+    position: relative;
+    padding: 1px 0;
+}
+
+header a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+:hover::after, header a:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 1px, 0);
+}
+
+header a, .title {
+    color: #fff;
+}
+
+li {
+    display: inline;
+    overflow: auto;
+    margin-left: 20px;
+}
+
+/* Adds margin between all elements inside */
+header > * {
+    margin: 0 7vw;
+}
+
+header {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    background: linear-gradient(to top left, #90169b75, #b828cb75);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    justify-content: space-between;
+}
+
+.sidebar i {
+    font-size: 24px;
+    color: #fff;
+    position: absolute;
+    margin-top: 20px;
+    display: none;
+}
+
+/* - - - - - - - - - - - - - - - - - -
+                MAIN
+- - - - - - - - - - - - - - - - - - - */ 
+
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - -
+            ANIMATION
+- - - - - - - - - - - - - - - - - - - - */
+
+@keyframes loadInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }    
+    40% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+
+    80% {
+        opacity: 100%;
+        transform: translateY(10%);
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        cursor: default;
+        user-select: none;
+    }
+
+    90% {
+        cursor: default;
+        user-select: none;
+        opacity: 0;
+    }
+
+    100% {
+        cursor: pointer;
+        user-select: initial;
+        opacity: 1;
+    }
+}
