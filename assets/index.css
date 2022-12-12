@@ -19,6 +19,8 @@ html {
     
 body {
     background-color: var(--app-dark-bg);
+    background: url('./img/boxesBackground.png');
+    background-size: contain;
     overflow: hidden;
 }
     
@@ -30,6 +32,10 @@ body {
 /* - - - - - - - - - - - - - - - - - -
                 HEADER
 - - - - - - - - - - - - - - - - - - - */ 
+
+header {
+    z-index: 1;
+}
 
 .title {
     user-select: none;
@@ -97,22 +103,44 @@ header {
 }
 
 .sidebar i {
-    font-size: 24px;
-    color: #fff;
-    position: absolute;
-    margin-top: 20px;
     display: none;
+    font-size: 34px;
+    justify-content: center;
+    margin-top: 50px;
+    cursor: pointer;
+    color: var(--app-font-color)
 }
 
 /* - - - - - - - - - - - - - - - - - -
                 MAIN
 - - - - - - - - - - - - - - - - - - - */ 
 
-#map {
-    width: 100vw;
-    height: 100vh;
+.text {
+    margin-top: 120px;
+    text-align: center;
 }
 
+h2 {
+    color: var(--app-font-color);
+    font-size: 4vw;
+}
+
+h3 {
+    color: #901c9f;
+    font-size: 2vw;
+}
+
+.divider {
+    width: auto;
+    height: 20px;
+    color: var(--app-font-color);
+}
+
+#map {
+    margin-top: 50px;
+    height: 70vh;
+    animation: fadeIn 3s;
+}
 
 /* - - - - - - - - - - - - - - - - - - -
             ANIMATION
@@ -144,17 +172,60 @@ header {
         opacity: 0;
         cursor: default;
         user-select: none;
-    }
-
-    90% {
-        cursor: default;
-        user-select: none;
-        opacity: 0;
+        transform: translateY(20%);
     }
 
     100% {
         cursor: pointer;
         user-select: initial;
         opacity: 1;
+    }
+}
+
+/* 480px and up */
+@media only screen and (max-width: 480px) {
+
+    .title::before {
+        content: "Web Dev";
+    }
+    .center {
+        font-size: 50px;
+    }
+    #welcome {
+        font-size: 25px;
+    }
+
+}
+
+/* 768px and up */
+@media only screen and (max-width: 768px) {
+    .sidebar ul {
+        display: none;
+        cursor: pointer;
+    }
+    .center {
+        font-size: 70px;
+    }
+    #welcome {
+        font-size: 30px;
+    }
+    .row > div {
+        width: 100% !important;
+    }
+    .sidebar i {
+        display: initial;
+    }
+}
+
+/* 992px and up */
+@media only screen and (max-width: 992px) {
+    .center {
+        font-size: 75px;
+    }
+    #welcome {
+        font-size: 35px;
+    }
+    .row > div {
+        width: calc(50% - 10px)
     }
 }
